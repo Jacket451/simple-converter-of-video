@@ -31,7 +31,7 @@ def convert():
     output_format = format_var.get()
 
     if not input_file or not output_file:
-        messagebox.showerror("Ошибка", "Выберите файлы!")
+        messagebox.showerror("Error", "Select files!")
         return
 
     ffmpeg_path = get_ffmpeg_path()
@@ -52,24 +52,24 @@ def convert():
         command.append(output_file)
 
         subprocess.run(command, check=True)
-        messagebox.showinfo("Готово", "Конвертация завершена!")
+        messagebox.showinfo("Ready", "Conversion complete!")
 
     except Exception as e:
-        messagebox.showerror("Ошибка", str(e))
+        messagebox.showerror("Error", str(e))
 
 
 # GUI
 root = tk.Tk()
-root.title("Видео конвертер")
+root.title("Video converter")
 root.geometry("500x300")
 
-tk.Label(root, text="Входной файл:").pack()
+tk.Label(root, text="Input file:").pack()
 input_entry = tk.Entry(root, width=50)
 input_entry.pack()
 
-tk.Button(root, text="Выбрать", command=select_input).pack()
+tk.Button(root, text="Select", command=select_input).pack()
 
-tk.Label(root, text="Формат вывода:").pack()
+tk.Label(root, text="Output Format:").pack()
 
 format_var = tk.StringVar(value="mp4")
 
@@ -78,12 +78,12 @@ formats = ["mp4", "avi", "mkv", "mov"]
 format_menu = tk.OptionMenu(root, format_var, *formats)
 format_menu.pack()
 
-tk.Label(root, text="Выходной файл:").pack()
+tk.Label(root, text="Output file::").pack()
 output_entry = tk.Entry(root, width=50)
 output_entry.pack()
 
-tk.Button(root, text="Сохранить как", command=select_output).pack()
+tk.Button(root, text="Save as", command=select_output).pack()
 
-tk.Button(root, text="Конвертировать", command=convert, bg="green", fg="white").pack(pady=20)
+tk.Button(root, text="Convert", command=convert, bg="green", fg="white").pack(pady=20)
 
 root.mainloop()
