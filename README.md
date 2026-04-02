@@ -30,7 +30,9 @@ Add ffmpeg.exe to your system PATH
 or place it in the same folder as the executable.
 
 ## Install dependencies (if needed)
-### pip install tkinter
+ ```
+ pip install tkinter
+ ```
 ⚠️ Tkinter is usually included with Python by default
 
 ## ▶️ Run
