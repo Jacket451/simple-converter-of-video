@@ -75,5 +75,4 @@ project/
 │
 ├── converter.py
 ├── ffmpeg.exe (optional)
-└── README.md
 ```
