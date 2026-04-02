@@ -34,7 +34,9 @@ or place it in the same folder as the executable.
 ⚠️ Tkinter is usually included with Python by default
 
 ## ▶️ Run
-`python converter.py`
+```python
+python converter.py
+```
 
 ## 📦 Build .exe (optional)
 
